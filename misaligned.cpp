@@ -15,10 +15,10 @@ int printColorMap() {
 
 // Test
 int testPrintColorMap() {
-    int num;
-    const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-    const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-    int i = 0, j = 0;
+    int num = 0;
+    // const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+    // const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+    // int i = 0, j = 0;
     // add test
     // (i+1)*5+(j+1)
     // majorColor[i];
