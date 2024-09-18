@@ -25,7 +25,7 @@ int testPrintColorMap() {
     printColorMap(ss);
     std::string input;
     while (std::getline(ss, input, '\n')) {
-        std::string expectedInputStr = std::to_string(i * 5 + j) + 
+        std::string expectedInputStr = std::to_string(i * 5 + j) +
                     " | " + majorColor[i] + " | " + minorColor[j];
         j++;
         if (j == 5) {
