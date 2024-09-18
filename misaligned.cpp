@@ -27,13 +27,13 @@ int testPrintColorMap() {
     while (std::getline(ss, input, '\n')) {
         std::string expectedInputStr = std::to_string(i * 5 + j) + " | " + majorColor[i] + " | " + minorColor[j];
         j++;
-        if (j == 5){
+        if (j == 5) {
             i++;
             j = 0;
         }
-        //std::cout << expectedInputStr << "\n";
-        if( expectedInputStr == input){
-            num ++;
+        // std::cout << expectedInputStr << "\n";
+        if (expectedInputStr == input) {
+            num++;
         }
     }
     return num;
