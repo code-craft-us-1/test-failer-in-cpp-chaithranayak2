@@ -2,7 +2,9 @@
 #include <string>
 #include <iostream>
 
-using std::cout, std::endl, std::string;
+using std::cout;
+using std::endl;
+using std::string;
 
 namespace WeatherSpace {
 class IWeatherSensor {
@@ -20,20 +22,26 @@ class IWeatherSensor {
 
 class SensorStub : public IWeatherSensor {
     int Humidity() const override {
-        return 72;
+        return m_Humidity;
     }
 
     int Precipitation() const override {
-        return 70;
+        return m_Precipitation;
     }
 
     double TemperatureInC() const override {
-        return 26;
+        return m_TemperatureInC;
     }
 
     int WindSpeedKMPH() const override {
-        return 52;
+        return m_WindSpeedKMPH;
     }
+ public:
+    int m_Humidity, m_Precipitation, m_TemperatureInC, m_WindSpeedKMPH;
+    SensorStub(int humidity = 72, int precipitation = 70,
+               double temperatureInC = 26, int windSpeedKMPH = 52):
+        m_Humidity(humidity), m_Precipitation(precipitation),
+        m_TemperatureInC(temperatureInC), m_WindSpeedKMPH(windSpeedKMPH) {}
 };
 
 // This is a function to predict the weather, based on readings
@@ -67,12 +75,12 @@ void TestRainy() {
 void TestHighPrecipitationAndLowWindspeed() {
     // This instance of stub needs to be different-
     // to give high precipitation (>60) and low wind-speed (<50)
-    SensorStub sensor;
+    SensorStub sensor = {72, 70, 26, 49};
 
     // strengthen the assert to expose the bug
     // (function returns Sunny day, it should predict rain)
     string report = Report(sensor);
-    assert(report.length() > 0);
+    assert(report.find("rain") != string::npos);
 }
 }  // namespace WeatherSpace
 
