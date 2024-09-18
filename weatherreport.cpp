@@ -36,12 +36,12 @@ class SensorStub : public IWeatherSensor {
     int WindSpeedKMPH() const override {
         return m_WindSpeedKMPH;
     }
-     public:
-        int m_Humidity, m_Precipitation, m_TemperatureInC, m_WindSpeedKMPH;
-        SensorStub(int humidity = 72, int precipitation = 70,
-                    double temperatureInC = 26, int windSpeedKMPH = 52):
-            m_Humidity(humidity), m_Precipitation(precipitation),
-            m_TemperatureInC(temperatureInC), m_WindSpeedKMPH(windSpeedKMPH) {}
+ public:
+    int m_Humidity, m_Precipitation, m_TemperatureInC, m_WindSpeedKMPH;
+    SensorStub(int humidity = 72, int precipitation = 70,
+               double temperatureInC = 26, int windSpeedKMPH = 52):
+        m_Humidity(humidity), m_Precipitation(precipitation),
+        m_TemperatureInC(temperatureInC), m_WindSpeedKMPH(windSpeedKMPH) {}
 };
 
 // This is a function to predict the weather, based on readings
